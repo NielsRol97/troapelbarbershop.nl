@@ -32,9 +32,9 @@ import NavItem from '@/components/NavItem.vue'
 
 const navigation = [
   { label: 'Home', to: '/' },
-  { label: 'Diensten', to: '/diensten' },
-  { label: 'Producten', to: '/producten' },
-  { label: 'Over ons', to: '/over-ons' },
+  { label: 'Diensten', to: '/services' },
+  { label: 'Producten', to: '/products' },
+  { label: 'Over ons', to: '/about' },
   { label: 'Contact', to: '/contact' },
 ]
 </script>
