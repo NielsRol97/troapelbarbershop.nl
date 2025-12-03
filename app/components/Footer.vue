@@ -12,9 +12,9 @@
         <h4>Navigatie</h4>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/diensten">Diensten</a></li>
-          <li><a href="/producten">Producten</a></li>
-          <li><a href="/over-ons">Over ons</a></li>
+          <li><a href="/services">Diensten</a></li>
+          <li><a href="/products">Producten</a></li>
+          <li><a href="/about">Over ons</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
