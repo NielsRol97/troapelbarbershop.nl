@@ -1,14 +1,20 @@
 <template>
-  <div>
-    <h1>If you can read this, the preview works!</h1>
-    <slot />
-  </div>
+    <div class="page-layout">
+      <Header />
+
+      <main class="page-content">
+        <slot />
+      </main>
+
+      <Footer />
+    </div>
 </template>
 
-<script lang="ts" setup>
-
-</script>
-
 <style>
+
+.page-content {
+  width: 100%;
+  min-height: 100vh;
+}
 
 </style>

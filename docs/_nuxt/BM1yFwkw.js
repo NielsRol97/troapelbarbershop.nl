@@ -1,1 +1,0 @@
-import{_ as t,c as o,a as s,r as a,o as n}from"./D6D8HcK0.js";const l={};function c(r,e){return n(),o("div",null,[e[0]||(e[0]=s("h1",null,"If you can read this, the preview works!",-1)),a(r.$slots,"default")])}const f=t(l,[["render",c]]);export{f as default};
