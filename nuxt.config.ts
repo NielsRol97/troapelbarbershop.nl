@@ -11,10 +11,10 @@ export default defineNuxtConfig({
       publicDir: 'docs'
     }
   },
-
   app: {
     baseURL: '/troapelbarbershop/'
   },
+  css: ['@/assets/css/variables.css','@/assets/css/main.css'],
 
   modules: [
     '@nuxt/content',
