@@ -8,7 +8,9 @@ export default defineNuxtConfig({
   ],
   modules: ['@nuxt/fonts', '@nuxt/icon'],
   ssr: false,
-  // app: {
-  //   baseURL: '/troapelbarbershop.nl/'
-  // }
+
+  app: {
+    baseURL: '/troapelbarbershop.nl/',
+    buildAssetsDir: '_nuxt/' // ← force absolute asset paths
+  }
 })
