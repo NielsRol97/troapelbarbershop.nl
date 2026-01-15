@@ -1,6 +1,9 @@
 :root {
   --primary-font-family: 'Montserrat', sans-serif;
 
+
+  --default-background-color: hsl(0, 0%, 98%);
+
   --header-bg-start: hsl(180, 12%, 14%);
   --header-bg-end: hsl(180, 10%, 8%);
   --primary-header-background-color: linear-gradient(
