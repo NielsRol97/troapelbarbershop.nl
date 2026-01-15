@@ -1,16 +1,15 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
-body {
+html, body {
     font-family: var(--primary-font-family);
+    margin: 0;
+    padding: 0;
 }
 
 .page-wrapper {
     width: 100%;
     min-height: 100vh;
-    /* background: var(--default-background-color); */
-    background: white;
+    background: var(--default-background-color);
 }
