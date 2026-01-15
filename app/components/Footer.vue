@@ -32,7 +32,7 @@ const { address, phone, email, times } = useAppConfig()
 
 <style scoped>
 .footer-wrapper {
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   padding: 2rem;
