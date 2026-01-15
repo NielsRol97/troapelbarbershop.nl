@@ -1,8 +1,8 @@
 <template>
   <Header />
-    <div>
+    <main class="page-wrapper">
       <slot />
-    </div>
+    </main>
   <Footer/>
 </template>
 
