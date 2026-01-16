@@ -46,7 +46,7 @@ defineEmits<{
   font-weight: 500;
   letter-spacing: 0.04em;
 
-  color: var(--header-text);
+  color: var(--text-inverse);
   text-decoration: none;
 
   padding: var(--space-sm, 0.5rem) var(--space-md, 1rem);

@@ -78,8 +78,9 @@ const { address, phone, email, times } = useAppConfig()
 <style scoped>
 .footer-wrapper {
   background: var(--header-background);
-  color: var(--header-text);
+  color: var(--text-inverse);
 }
+
 
 /* Inner container */
 .footer-inner {
@@ -104,6 +105,7 @@ const { address, phone, email, times } = useAppConfig()
 
 /* Titles from component */
 .footer-block :deep(.title) {
+  color: var(--text-inverse);
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -112,12 +114,15 @@ const { address, phone, email, times } = useAppConfig()
 
 /* Text from component */
 .footer-block :deep(.text) {
+  color: var(--text-inverse);
   font-size: 0.95rem;
   opacity: 0.9;
 }
 
 /* Opening times */
 .opening-times {
+  color: var(--text-inverse);
+  opacity: 0.85;
   list-style: none;
   padding: 0;
   margin: 0.5rem 0 0;
