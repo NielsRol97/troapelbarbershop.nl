@@ -35,8 +35,6 @@ const { items } = useNavigation()
 const { isOpen, toggle, close } = useOverlayMenu()
 </script>
 
-
-
 <style scoped>
 /* Toggle button */
 .nav-toggle {
@@ -46,9 +44,9 @@ const { isOpen, toggle, close } = useOverlayMenu()
   background: none;
   border: none;
 
-  font-family: var(--primary-font-family);
-  font-size: var(--font-size-lg);
-  color: var(--primary-header-text-color);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-lg, 1.25rem);
+  color: var(--header-text);
 
   cursor: pointer;
   padding: var(--space-sm, 0.5rem);
@@ -60,7 +58,7 @@ const { isOpen, toggle, close } = useOverlayMenu()
   inset: 0;
   z-index: 1000;
 
-  background: var(--primary-header-background-color);
+  background: var(--header-background);
 
   display: flex;
   align-items: center;
@@ -87,7 +85,7 @@ const { isOpen, toggle, close } = useOverlayMenu()
   margin: 0;
   padding: 0;
 
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-xl, 2rem);
   display: flex;
   flex-direction: column;
   gap: var(--space-lg, 2rem);

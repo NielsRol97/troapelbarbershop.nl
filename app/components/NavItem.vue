@@ -41,12 +41,12 @@ defineEmits<{
   align-items: center;
   gap: var(--space-sm, 0.75rem);
 
-  font-family: var(--primary-font-family);
-  font-size: var(--text-h3);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-lg, 1.5rem);
   font-weight: 500;
   letter-spacing: 0.04em;
 
-  color: var(--primary-header-text-color);
+  color: var(--header-text);
   text-decoration: none;
 
   padding: var(--space-sm, 0.5rem) var(--space-md, 1rem);
@@ -59,7 +59,7 @@ defineEmits<{
 /* Icon */
 .nav-icon {
   font-size: 1.1em;
-  width: 1.25em;          /* vaste kolom voor uitlijning */
+  width: 1.25em; /* vaste kolom voor uitlijning */
   text-align: center;
   opacity: 0.85;
   flex-shrink: 0;
@@ -74,7 +74,7 @@ defineEmits<{
 
 /* Active route */
 .nav-link.router-link-active {
-  font-size: var(--text-h2);
+  font-size: var(--font-size-xl, 2rem);
   font-weight: 600;
 }
 

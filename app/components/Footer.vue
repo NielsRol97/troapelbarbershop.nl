@@ -1,26 +1,71 @@
 <template>
   <footer class="footer-wrapper">
-    <div class="footer-grid">
-      <!-- Contact -->
-      <div class="footer-block">
-        <p><strong>Troapel Barbershop</strong></p>
-        <p>{{ address }}</p>
-        <p>
-          <a :href="`tel:${phone}`">{{ phone }}</a><br />
-          <a :href="`mailto:${email}`">{{ email }}</a>
-        </p>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <!-- Contact -->
+        <div class="footer-block">
+          <Title
+            :title="{
+              heading: 'h3',
+              text: 'Troapel Barbershop'
+            }"
+          />
+
+          <Text
+            :text="{
+              type: 'p',
+              content: address
+            }"
+          />
+
+          <Text
+            :text="{
+              type: 'p',
+              content: phone
+            }"
+          />
+
+          <Text
+            :text="{
+              type: 'p',
+              content: email
+            }"
+          />
+        </div>
+
+        <!-- Opening hours -->
+        <div class="footer-block">
+          <Title
+            :title="{
+              heading: 'h3',
+              text: 'Openingstijden'
+            }"
+          />
+
+          <ul class="opening-times">
+            <li
+              v-for="time in times"
+              :key="time.day"
+            >
+              <span class="day">{{ time.day }}</span>
+              <span class="time">
+                <template v-if="time.closed">Gesloten</template>
+                <template v-else>
+                  {{ time.openingHour }} – {{ time.closingHour }}
+                </template>
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <!-- Opening hours -->
-      <div class="footer-block">
-        <p><strong>Openingstijden</strong></p>
-        <ul class="opening-times">
-          <li v-for="time in times" :key="time.day">
-            <span class="day">{{ time.day }}</span>
-            <span v-if="time.closed">Gesloten</span>
-            <span v-else>{{ time.openingHour }} – {{ time.closingHour }}</span>
-          </li>
-        </ul>
+      <div class="footer-bottom">
+        <Text
+          :text="{
+            type: 'small',
+            content: `© ${new Date().getFullYear()} Troapel Barbershop`
+          }"
+        />
       </div>
     </div>
   </footer>
@@ -32,27 +77,43 @@ const { address, phone, email, times } = useAppConfig()
 
 <style scoped>
 .footer-wrapper {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  padding: 2rem;
-  background: var(--primary-header-background-color);
-  color: #fff;
-  z-index: 100;
+  background: var(--header-background);
+  color: var(--header-text);
 }
 
-/* Layout */
-.footer-grid {
+/* Inner container */
+.footer-inner {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  text-align: left;
+  padding: 3rem 2rem 1.5rem;
 }
 
-.footer-block p {
-  margin: 0.25rem 0;
+/* Grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+/* Blocks */
+.footer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Titles from component */
+.footer-block :deep(.title) {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Text from component */
+.footer-block :deep(.text) {
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
 /* Opening times */
@@ -60,6 +121,10 @@ const { address, phone, email, times } = useAppConfig()
   list-style: none;
   padding: 0;
   margin: 0.5rem 0 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .opening-times li {
@@ -72,26 +137,35 @@ const { address, phone, email, times } = useAppConfig()
   opacity: 0.85;
 }
 
-/* Links */
-.footer-wrapper a {
-  color: inherit;
-  text-decoration: none;
+.time {
+  text-align: right;
 }
 
-.footer-wrapper a:hover {
-  text-decoration: underline;
+/* Bottom bar */
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  text-align: center;
+  opacity: 0.7;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
     text-align: center;
   }
 
   .opening-times li {
     justify-content: center;
     gap: 0.5rem;
+  }
+
+  .time {
+    text-align: center;
   }
 }
 </style>
