@@ -46,7 +46,7 @@ const { isOpen, toggle, close } = useOverlayMenu()
 
   font-family: var(--font-family-base);
   font-size: var(--font-size-lg, 1.25rem);
-  color: var(--header-text);
+  color: var(--background-muted);
 
   cursor: pointer;
   padding: var(--space-sm, 0.5rem);

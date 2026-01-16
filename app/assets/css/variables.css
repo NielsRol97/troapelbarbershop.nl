@@ -10,19 +10,24 @@
   --color-white: hsl(0, 0%, 100%);
   --color-black: hsl(0, 0%, 0%);
 
-  --color-gray-100: hsl(0, 0%, 98%);
-  --color-gray-200: hsl(0, 0%, 92%);
-  --color-gray-300: hsl(0, 0%, 80%);
-  --color-gray-500: hsl(0, 0%, 45%);
-  --color-gray-700: hsl(0, 0%, 25%);
-  --color-gray-900: hsl(0, 0%, 10%);
+  /* Neutrals (warmer dan puur grijs) */
+  --color-gray-100: hsl(40, 20%, 97%);
+  --color-gray-200: hsl(40, 15%, 92%);
+  --color-gray-300: hsl(40, 10%, 82%);
+  --color-gray-500: hsl(40, 8%, 45%);
+  --color-gray-700: hsl(40, 10%, 28%);
+  --color-gray-900: hsl(40, 15%, 12%);
 
   /* =========================
      Brand / accent
      ========================= */
-  --color-primary: hsl(180, 12%, 14%);
-  --color-primary-dark: hsl(180, 10%, 8%);
-  --color-accent: hsl(180, 15%, 92%);
+  /* Donker petrol (blijft barbershop-achtig) */
+  --color-primary: hsl(185, 18%, 18%);
+  --color-primary-dark: hsl(185, 20%, 10%);
+
+  /* Warm accent (koper / brass vibe) */
+  --color-accent: hsl(35, 65%, 65%);
+  --color-accent-muted: hsl(35, 40%, 55%);
 
   /* =========================
      Backgrounds
@@ -39,6 +44,9 @@
   --text-secondary: var(--color-gray-700);
   --text-muted: var(--color-gray-500);
   --text-inverse: var(--color-white);
+
+  /* Accent text (sparingly!) */
+  --text-accent: var(--color-accent);
 
   /* =========================
      Header
@@ -63,10 +71,14 @@
   --button-secondary-text: var(--color-gray-900);
   --button-secondary-border: var(--color-gray-900);
 
+  /* Accent button (optioneel, later) */
+  --button-accent-bg: var(--color-accent);
+  --button-accent-text: var(--color-gray-900);
+
   /* =========================
      Borders & states
      ========================= */
   --border-default: var(--color-gray-300);
-  --border-focus: hsl(180, 40%, 40%);
-  --overlay-dark: rgba(0, 0, 0, 0.5);
+  --border-focus: hsl(35, 70%, 45%);
+  --overlay-dark: rgba(0, 0, 0, 0.55);
 }

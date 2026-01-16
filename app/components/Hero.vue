@@ -1,35 +1,42 @@
 <template>
-  <section class="hero-wrapper">
+  <section
+    class="hero-wrapper"
+    :style="backgroundStyle"
+  >
     <div class="hero-content">
       <Title
         :title="{
-          heading: 'h1',
-          text: 'Troapel Barbershop. Strak en tijdloos.'
+          heading: hero.heading ?? 'h1',
+          text: hero.title
         }"
       />
 
       <Text
-        :text="{
-          type: 'p',
-          content: 'Ambachtelijke knip- en scheerbeurten in Ter Apel.'
-        }"
+        v-if="hero.subtitle"
+        :text="hero.subtitle"
       />
 
-      <Button
-        :button="{
-          text: 'Reserveer nu',
-          href: 'https://1kapper.nl/salons/troapel-barbershop-ter-apel/maak-een-afspraak',
-          primary: true
-        }"
-      />
+      <slot />
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
-    import Title from '@/components/Title.vue'
-    import Text from '@/components/Text.vue'
-    import Button from '@/components/Button.vue'
+import { computed } from 'vue'
+import type { Hero } from '@/types/hero'
+
+import Title from '@/components/Title.vue'
+import Text from '@/components/Text.vue'
+
+const props = defineProps<{
+  hero: Hero
+}>()
+
+const backgroundStyle = computed(() =>
+  props.hero.backgroundImage
+    ? { backgroundImage: `url(${props.hero.backgroundImage})` }
+    : undefined
+)
 </script>
 
 <style scoped>
@@ -42,7 +49,6 @@
   justify-content: center;
   align-items: center;
 
-  background-image: url('/images/image_placeholder.png');
   background-size: cover;
   background-position: center;
 }
@@ -52,17 +58,19 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--overlay-dark);
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+
   max-width: 720px;
   padding: 2rem;
+
   text-align: center;
-  color: #fff;
+  color: var(--text-inverse);
 
   display: flex;
   flex-direction: column;
@@ -71,12 +79,12 @@
   animation: fadeUp 0.8s ease-out both;
 }
 
-/* FIX: scoped styles + child components */
+/* context styling */
 .hero-content :deep(.title) {
   font-size: clamp(2.6rem, 5vw, 4rem);
   line-height: 1.1;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-inverse);
 }
 
 .hero-content :deep(.text) {
@@ -86,7 +94,7 @@
   margin: 0 auto;
 }
 
-/* subtiele animatie */
+/* animation */
 @keyframes fadeUp {
   from {
     opacity: 0;
